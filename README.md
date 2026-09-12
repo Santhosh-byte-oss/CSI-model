@@ -73,3 +73,7 @@ Plaintext
 http://127.0.0.1:5000
 License
 This project is open-source and available under the MIT License.
+
+## Dashboard Preview
+
+![Three.js CSI Dashboard Preview](assets/dashboard.png)
