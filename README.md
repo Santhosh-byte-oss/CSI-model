@@ -76,4 +76,4 @@ This project is open-source and available under the MIT License.
 
 ## Dashboard Preview
 
-![Three.js CSI Dashboard Preview](assets/dashboard.png)
+![Three.js CSI Dashboard Preview](assets/images/dashboard.png)
