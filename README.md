@@ -1,19 +1,25 @@
 Wi-Fi CSI Edge AI Spatial Monitoring System
+
 An end-to-end, privacy-preserving edge-IoT monitoring system that detects human presence and motion states (standing vs. walking) using standard Wi-Fi Channel State Information (CSI), deployed on bare-metal microcontrollers and visualized through an immersive Three.js 3D cinematic web dashboard.
 
 Architecture & System Pipeline
+
 Plaintext
+
 [ESP32: CSI Sensing & TinyML Inference] --(Serial/UART)--> [Python Flask-SocketIO Server]
 [ESP8266: RSSI Triangulation Node]       --(UDP Broadcast)--> [Socket.io Real-Time Stream] ---> [Three.js 3D Dashboard]
 ESP32 (Primary Node): Captures raw physical Wi-Fi CSI amplitudes, performs real-time digital signal processing (DSP) feature extraction (mean, max, and variance differences), and runs hardware-level TinyML inference using a compiled Random Forest model.
 
 ESP8266 (Secondary Node): Tracks RSSI spatial telemetry and broadcasts positional packets over UDP.
 
-Python Backend: An asynchronous Flask-SocketIO bridge that aggregates serial streams and UDP packets, applies rolling-window smoothing, and broadcasts real-time telemetry.
+Python Backend:
+An asynchronous Flask-SocketIO bridge that aggregates serial streams and UDP packets, applies rolling-window smoothing, and broadcasts real-time telemetry.
 
-Frontend Dashboard: A high-tech web interface built with Three.js featuring volumetric lighting, a dynamic grid, and a real-time GLTF animated avatar (avatar.glb) that mirrors user positioning and skeletal animations.
+Frontend Dashboard:
+A high-tech web interface built with Three.js featuring volumetric lighting, a dynamic grid, and a real-time GLTF animated avatar (avatar.glb) that mirrors user positioning and skeletal animations.
 
 Project Structure
+
 Plaintext
 CSI_Project/
 │
@@ -28,7 +34,9 @@ CSI_Project/
 ├── CSI_Model.h                # Exported TinyML decision tree header
 └── requirements.txt           # Python dependencies
 Prerequisites & Dependencies
+
 Hardware Requirements
+
 ESP32 Node (configured for CSI extraction)
 
 ESP8266 Node (for RSSI spatial tracking)
